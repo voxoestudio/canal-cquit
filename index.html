@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escola Canal C Quit - Educação Profissional Premium</title>
+    
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Biblioteca de Ícones Premium (Phosphor Icons) -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <style>
+        /* ================= VARIÁVEIS DE CORES PREMIUM ================= */
+        :root {
+            --cor-primaria-azul: #060b26;    /* Azul Navy super escuro e elegante */
+            --cor-secundaria-azul: #101b4d;  /* Azul intermediário */
+            --cor-destaque-rosa: #f40051;    /* Rosa vibrante moderno */
+            --cor-destaque-rosa-hover: #ff1a66;
+            --cor-fundo-claro: #f8fafc;      /* Slate 50 (Fundo moderno e limpo) */
+            --cor-texto-escuro: #0f172a;     /* Slate 900 */
+            --cor-texto-claro: #ffffff;
+            --cor-texto-mutado: #64748b;     /* Slate 500 */
+            --fonte-titulos: 'Montserrat', sans-serif;
+            --fonte-textos: 'Inter', sans-serif;
+            
+            --sombra-premium: 0 20px 40px -15px rgba(0,0,0,0.08);
+            --sombra-glow: 0 10px 30px -10px rgba(244, 0, 81, 0.6);
+            --borda-raio: 24px;
+        }
+
+        /* ================= RESET BÁSICO ================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--fonte-textos);
+            color: var(--cor-texto-escuro);
+            background-color: var(--cor-fundo-claro);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; }
+        ul { list-style: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* ================= TIPOGRAFIA PREMIUM ================= */
+        h1, h2, h3, h4 {
+            font-family: var(--fonte-titulos);
+            color: var(--cor-primaria-azul);
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cor-destaque-rosa), transparent);
+            margin: 20px auto 0;
+            border-radius: 4px;
+        }
+
+        /* ================= BOTÕES PREMIUM ================= */
+        .btn-primario {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(135deg, var(--cor-destaque-rosa) 0%, #c5003f 100%);
+            color: var(--cor-texto-claro);
+            font-family: var(--fonte-titulos);
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 18px 36px;
+            border-radius: 50px;
+            letter-spacing: 1px;
+            font-size: 0.95rem;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            border: none;
+            cursor: pointer;
+            box-shadow: var(--sombra-glow);
+        }
+
+        .btn-primario:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 35px -10px rgba(244, 0, 81, 0.8);
+            background: linear-gradient(135deg, var(--cor-destaque-rosa-hover) 0%, var(--cor-destaque-rosa) 100%);
+            color: #fff;
+        }
+
+        .btn-secundario {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background-color: transparent;
+            color: var(--cor-primaria-azul);
+            font-family: var(--fonte-titulos);
+            font-weight: 600;
+            padding: 12px 24px;
+            border-radius: 50px;
+            border: 2px solid rgba(6, 11, 38, 0.1);
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn-secundario:hover {
+            border-color: var(--cor-primaria-azul);
+            background-color: var(--cor-primaria-azul);
+            color: var(--cor-texto-claro);
+            transform: translateY(-2px);
+        }
+
+        /* ================= LAYOUT GERAL ================= */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        section { padding: 6rem 0; }
+
+        /* ================= HEADER PREMIUM ================= */
+        header {
+            background-color: rgba(6, 11, 38, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 18px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-nav {
+            color: var(--cor-texto-claro);
+            font-family: var(--fonte-titulos);
+            font-size: 1.6rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo-nav span { color: var(--cor-destaque-rosa); }
+
+        nav ul {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        nav a {
+            color: rgba(255,255,255,0.8);
+            font-family: var(--fonte-titulos);
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        nav a:hover { 
+            color: var(--cor-texto-claro); 
+            text-shadow: 0 0 10px rgba(255,255,255,0.3);
+        }
+
+        .menu-toggle { display: none; color: white; font-size: 1.8rem; cursor: pointer; }
+
+        /* ================= HERO SECTION ================= */
+        .hero {
+            background: linear-gradient(135deg, var(--cor-primaria-azul) 0%, #0a1128 100%);
+            padding: 200px 0 120px;
+            color: var(--cor-texto-claro);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Efeitos visuais de fundo luxuosos */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -30%; right: -10%;
+            width: 800px; height: 800px;
+            background: radial-gradient(circle, rgba(244, 0, 81, 0.15) 0%, rgba(244, 0, 81, 0) 60%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -20%; left: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(24, 43, 107, 0.4) 0%, transparent 60%);
+            border-radius: 50%;
+            filter: blur(60px);
+            z-index: 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .tag-hero {
+            display: inline-block;
+            background: rgba(244, 0, 81, 0.1);
+            color: var(--cor-destaque-rosa);
+            font-family: var(--fonte-titulos);
+            font-weight: 600;
+            font-size: 0.85rem;
+            padding: 8px 16px;
+            border-radius: 30px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(244, 0, 81, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--cor-texto-claro);
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .hero-text h1 span {
+            background: linear-gradient(90deg, #fff, rgba(255,255,255,0.7));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-text p {
+            font-size: 1.2rem;
+            color: rgba(255,255,255,0.7);
+            font-weight: 300;
+            margin-bottom: 45px;
+            max-width: 90%;
+        }
+
+        .hero-image { position: relative; }
+        
+        .hero-image img {
+            border-radius: var(--borda-raio);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .moldura-premium {
+            position: absolute;
+            top: 20px; right: -20px; bottom: -20px; left: 20px;
+            border: 2px solid rgba(255,255,255,0.1);
+            border-radius: var(--borda-raio);
+            z-index: 1;
+        }
+
+        /* ================= VANTAGENS ================= */
+        .vantagens { background-color: #ffffff; }
+
+        .grid-vantagens {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .card-vantagem {
+            background-color: var(--cor-fundo-claro);
+            padding: 45px 35px;
+            border-radius: var(--borda-raio);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0,0,0,0.02);
+            text-align: left;
+        }
+
+        .card-vantagem:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--sombra-premium);
+            background-color: #ffffff;
+        }
+
+        .icone-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(244, 0, 81, 0.08);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 25px;
+            color: var(--cor-destaque-rosa);
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+
+        .card-vantagem:hover .icone-wrapper {
+            background: var(--cor-destaque-rosa);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .card-vantagem h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .card-vantagem p { 
+            font-size: 1rem; 
+            color: var(--cor-texto-mutado);
+            font-weight: 400; 
+        }
+
+        /* ================= COMBO 3 EM 1 ================= */
+        .combo {
+            background-color: #ffffff;
+            position: relative;
+            padding: 8rem 0;
+        }
+
+        .combo-card-glass {
+            background: var(--cor-fundo-claro);
+            border-radius: 32px;
+            padding: 60px;
+            box-shadow: var(--sombra-premium);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .combo h2 { text-align: left; margin-bottom: 20px; font-size: 2.2rem; }
+        .combo h2::after { margin: 15px 0 0 0; }
+
+        .lista-beneficios {
+            margin: 30px 0;
+        }
+        
+        .lista-beneficios li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            font-weight: 500;
+            color: var(--cor-texto-escuro);
+        }
+
+        .lista-beneficios i {
+            color: #10b981; /* Verde esmeralda para check */
+            font-size: 1.5rem;
+        }
+
+        /* ================= CATÁLOGO DE CURSOS ================= */
+        .cursos { background-color: var(--cor-fundo-claro); }
+
+        .grid-cursos {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 40px;
+        }
+
+        .card-curso {
+            background: #ffffff;
+            border-radius: var(--borda-raio);
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+            border: 1px solid rgba(0,0,0,0.04);
+            display: flex;
+            flex-direction: column;
+            transition: all 0.4s ease;
+        }
+
+        .card-curso:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--sombra-premium);
+        }
+
+        .curso-img {
+            height: 220px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .curso-img::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 50%, rgba(6, 11, 38, 0.8) 100%);
+        }
+
+        .badge-curso {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: rgba(255,255,255,0.95);
+            color: var(--cor-primaria-azul);
+            padding: 8px 16px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            font-family: var(--fonte-titulos);
+            z-index: 2;
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .curso-conteudo {
+            padding: 35px 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .curso-conteudo h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+
+        .curso-resumo {
+            font-size: 0.95rem;
+            color: var(--cor-texto-mutado);
+            margin-bottom: 30px;
+            flex-grow: 1;
+        }
+
+        .curso-detalhes {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(0,0,0,0.06);
+        }
+
+        .curso-preco {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--cor-primaria-azul);
+            font-family: var(--fonte-titulos);
+        }
+
+        .curso-preco small {
+            display: block;
+            font-size: 0.75rem;
+            color: var(--cor-texto-mutado);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+        }
+
+        /* ================= PERFIL ================= */
+        .perfil {
+            background-color: var(--cor-primaria-azul);
+            color: var(--cor-texto-claro);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .perfil h2 { color: var(--cor-texto-claro); }
+
+        .grid-perfil {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .card-perfil {
+            background: rgba(255,255,255,0.03);
+            padding: 40px 30px;
+            border-radius: var(--borda-raio);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card-perfil:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.05);
+        }
+
+        .card-perfil i {
+            font-size: 2.5rem;
+            color: var(--cor-destaque-rosa);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .card-perfil h3 {
+            color: var(--cor-texto-claro);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .card-perfil p {
+            color: rgba(255,255,255,0.6);
+            font-size: 0.95rem;
+            font-weight: 300;
+        }
+
+        /* ================= DEPOIMENTOS ================= */
+        .depoimentos { background-color: #ffffff; }
+
+        .grid-depoimentos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+        }
+
+        .card-depoimento {
+            background-color: var(--cor-fundo-claro);
+            padding: 50px 40px;
+            border-radius: var(--borda-raio);
+            position: relative;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+
+        .aspas {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            font-size: 4rem;
+            color: rgba(244, 0, 81, 0.1);
+            line-height: 1;
+            font-family: serif;
+        }
+
+        .estrelas { 
+            color: #f59e0b; 
+            margin-bottom: 20px; 
+            font-size: 1.2rem;
+            display: flex;
+            gap: 4px;
+        }
+        
+        .texto-depoimento {
+            font-size: 1.1rem;
+            color: var(--cor-texto-escuro);
+            margin-bottom: 30px;
+            line-height: 1.8;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+
+        .perfil-autor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .avatar-autor {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            background-color: #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: var(--cor-primaria-azul);
+        }
+
+        .autor {
+            font-family: var(--fonte-titulos);
+            font-weight: 700;
+            color: var(--cor-primaria-azul);
+        }
+
+        .autor small {
+            font-weight: 500;
+            color: var(--cor-texto-mutado);
+            font-family: var(--fonte-textos);
+            display: block;
+        }
+
+        /* ================= CTA FINAL ================= */
+        .cta-final {
+            background: var(--cor-primaria-azul);
+            color: var(--cor-texto-claro);
+            text-align: center;
+            padding: 8rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-final::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at center, rgba(244, 0, 81, 0.2) 0%, transparent 60%);
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-final h2 {
+            color: var(--cor-texto-claro);
+            margin-bottom: 25px;
+            font-size: 3rem;
+        }
+        .cta-final h2::after { display: none; }
+
+        .cta-final p {
+            max-width: 600px;
+            margin: 0 auto 40px;
+            font-size: 1.2rem;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ================= FOOTER ================= */
+        footer {
+            background-color: #030614; 
+            color: rgba(255,255,255,0.5);
+            padding: 80px 0 30px;
+            font-size: 0.95rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-logo {
+            font-family: var(--fonte-titulos);
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo span { color: var(--cor-destaque-rosa); }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a { transition: color 0.3s; }
+        .footer-links a:hover { color: var(--cor-destaque-rosa); }
+
+        .agencia {
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+        }
+
+        /* ================= MEDIA QUERIES ================= */
+        @media (max-width: 1024px) {
+            .hero-grid, .combo-card-glass { grid-template-columns: 1fr; text-align: center; }
+            .hero-text h1 { font-size: 2.8rem; }
+            .hero-text p { margin: 0 auto 40px; }
+            .combo h2 { text-align: center; }
+            .combo h2::after { margin: 15px auto 0; }
+            .lista-beneficios li { justify-content: center; }
+            .footer-grid { grid-template-columns: 1fr; text-align: center; }
+            .footer-logo { justify-content: center; }
+        }
+
+        @media (max-width: 768px) {
+            h2 { font-size: 2rem; }
+            section { padding: 4rem 0; }
+            .combo-card-glass { padding: 40px 20px; }
+            
+            .menu-toggle { display: block; }
+            nav ul {
+                display: none; 
+                flex-direction: column;
+                width: 100%;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                background-color: rgba(6, 11, 38, 0.98);
+                backdrop-filter: blur(10px);
+                padding: 30px 0;
+                border-top: 1px solid rgba(255,255,255,0.05);
+            }
+            nav ul.active { display: flex; }
+            nav ul li { margin-bottom: 20px; }
+            .agencia { flex-direction: column; gap: 15px; text-align: center; }
+        }
+
+        /* ================= BOTAO WHATSAPP ================= */
+        .btn-whatsapp-float {
+            position: fixed;
+            width: 65px;
+            height: 65px;
+            bottom: 30px;
+            right: 30px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 35px;
+            box-shadow: 0 10px 30px rgba(37, 211, 102, 0.4);
+            z-index: 9999;
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.6);
+            color: #FFF;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="#conteudo-principal" style="position:absolute; width:1px; height:1px; overflow:hidden;">Ir para o conteúdo principal</a>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo-nav">
+                <img src="https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/centro1-2.png" alt="Logo Escola Canal C Quit" style="max-height: 45px; width: auto;">
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <i class="ph ph-list"></i>
+            </div>
+            <nav>
+                <ul id="navMenu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#vantagens">Diferenciais</a></li>
+                    <li><a href="#cursos">Cursos</a></li>
+                    <li><a href="https://wa.me/554195111879" target="_blank" class="btn-primario" style="padding: 12px 24px; font-size: 0.85rem;"><i class="ph-bold ph-whatsapp-logo"></i> Fale Conosco</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="conteudo-principal">
+        
+        <!-- HERO SECTION -->
+        <section id="home" class="hero">
+            <div class="container hero-grid">
+                <div class="hero-text">
+                    <div class="tag-hero"><i class="ph-bold ph-sparkle"></i> O Futuro é Agora</div>
+                    <h1>Evolua sua carreira com <span>educação de alto nível</span></h1>
+                    <p>Domine novas competências, destaque-se no mercado e alcance seus objetivos com a metodologia prática e inovadora da Canal C Quit.</p>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap;">
+                        <a href="#cursos" class="btn-primario">Explorar Formações <i class="ph-bold ph-arrow-right"></i></a>
+                        <a href="#vantagens" class="btn-secundario" style="color: #fff; border-color: rgba(255,255,255,0.2);">Conhecer Método</a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="moldura-premium"></div>
+                    <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Estudante focada usando notebook">
+                </div>
+            </div>
+        </section>
+
+        <!-- VANTAGENS -->
+        <section id="vantagens" class="vantagens">
+            <div class="container">
+                <h2>Por que a Canal C Quit é a melhor escolha?</h2>
+                <div class="grid-vantagens">
+                    <div class="card-vantagem">
+                        <div class="icone-wrapper"><i class="ph-fill ph-certificate"></i></div>
+                        <h3>Titulação Oficial</h3>
+                        <p>Certificações com validade em todo o território nacional, construindo um currículo de peso para grandes empresas.</p>
+                    </div>
+                    <div class="card-vantagem">
+                        <div class="icone-wrapper"><i class="ph-fill ph-chalkboard-teacher"></i></div>
+                        <h3>Mentores Especialistas</h3>
+                        <p>Aprenda com profissionais ativos no mercado de trabalho que trazem desafios reais para dentro da sala de aula.</p>
+                    </div>
+                    <div class="card-vantagem">
+                        <div class="icone-wrapper"><i class="ph-fill ph-laptop"></i></div>
+                        <h3>Flexibilidade Total</h3>
+                        <p>Estude no formato híbrido ou 100% digital. A educação se adapta à sua rotina, garantindo máxima absorção de conteúdo.</p>
+                    </div>
+                    <div class="card-vantagem">
+                        <div class="icone-wrapper"><i class="ph-fill ph-headset"></i></div>
+                        <h3>Suporte Dedicado</h3>
+                        <p>Uma equipe de tutoria pronta para sanar dúvidas rapidamente, acompanhando você em cada passo da sua jornada.</p>
+                    </div>
+                    <div class="card-vantagem">
+                        <div class="icone-wrapper"><i class="ph-fill ph-rocket-launch"></i></div>
+                        <h3>Plataforma Tecnológica</h3>
+                        <p>Um ambiente virtual de aprendizagem ultrarrápido, intuitivo e desenhado para uma experiência imersiva sem distrações.</p>
+                    </div>
+                    <div class="card-vantagem">
+                        <div class="icone-wrapper"><i class="ph-fill ph-infinity"></i></div>
+                        <h3>Acesso Ilimitado</h3>
+                        <p>Reveja as aulas sempre que precisar, mantendo seus conhecimentos frescos e alinhados às novidades do mercado.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMBO DESTAQUE -->
+        <section class="combo">
+            <div class="container">
+                <div class="combo-card-glass">
+                    <div class="hero-image">
+                        <img src="https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/438818944_832127542281982_8019350636462414488_n.jpg.jpeg" alt="Profissionais em ambiente corporativo moderno" style="border-radius: 20px;">
+                    </div>
+                    <div class="hero-text">
+                        <span class="tag-hero" style="background: rgba(16, 185, 129, 0.1); color: #059669; border-color: rgba(16, 185, 129, 0.2);">Formação Completa</span>
+                        <h2>Pacote Executivo 3 em 1</h2>
+                        <p style="color: var(--cor-texto-mutado); font-size: 1.1rem;">Domine as áreas mais críticas de qualquer grande corporação moderna com nossa formação estratégica tripla.</p>
+                        
+                        <ul class="lista-beneficios">
+                            <li><i class="ph-fill ph-check-circle"></i> Administração de Negócios</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Gestão em Frente de Caixa</li>
+                            <li><i class="ph-fill ph-check-circle"></i> Tecnologia da Informação</li>
+                        </ul>
+
+                        <div class="curso-preco" style="margin: 30px 0; font-size: 1.8rem;">
+                            <small>Condição Especial • 135 Horas / 12 Meses</small>
+                            12x de R$ 99,90
+                        </div>
+                        <a href="https://wa.me/554195111879" target="_blank" class="btn-primario"><i class="ph-bold ph-whatsapp-logo"></i> Garantir Meu Combo</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CATÁLOGO DE CURSOS -->
+        <section id="cursos" class="cursos">
+            <div class="container">
+                <h2>Cursos de Alta Performance</h2>
+                
+                <div class="grid-cursos">
+                    
+                    <!-- Curso 1 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url(https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/Copia-de-Banner-1.png) center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-clock"></i> 15 Meses</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Informática Completa</h3>
+                            <p class="curso-resumo">Desenvolva habilidades essenciais no Windows, Word, Excel, PowerPoint e plataformas digitais para ter mais produtividade, autonomia e segurança.</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco">
+                                    <small>Investimento</small>
+                                    15x R$ 99,90
+                                </div>
+                            </div>
+                            <a href="https://wa.me/554195111879" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Garantir Vaga</a>
+                        </div>
+                    </div>
+
+                    <!-- Curso 2 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url('https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-28-at-18.47.03.jpeg') center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-clock"></i> 7 Meses</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Auxiliar Contábil</h3>
+                            <p class="curso-resumo">Prática completa em notas fiscais, impostos, Simples Nacional e balanço patrimonial. Inclui bônus em Excel Avançado e Matemática Financeira.</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco">
+                                    <small>Investimento</small>
+                                    7x R$ 99,90
+                                </div>
+                            </div>
+                            <a href="https://wa.me/554195111879" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Garantir Vaga</a>
+                        </div>
+                    </div>
+
+                    <!-- Curso 3 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url('https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-29-at-14.22.59.jpeg') center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-trend-up"></i> Alta Demanda</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Marketing Digital</h3>
+                            <p class="curso-resumo">Crie estratégias eficazes, domine Google Ads, Analytics, E-mail Marketing, gestão de CRM e impulsione marcas com conteúdos atrativos.</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco" style="font-size:1.1rem; color:var(--cor-texto-mutado)">
+                                    Matrículas Abertas
+                                </div>
+                            </div>
+                            <a href="https://wix.to/YkOiO8c" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Saber Mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Curso 4 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url('https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-28-at-18.25.36.jpeg') center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-clock"></i> 3 Meses</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Atendente de Farmácia</h3>
+                            <p class="curso-resumo">Domine anatomia do corpo humano, principais doenças, leitura de bulas, administração de medicamentos e noções vitais de primeiros socorros.</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco">
+                                    <small>Investimento</small>
+                                    3x R$ 99,90
+                                </div>
+                            </div>
+                            <a href="https://wa.me/554195111879" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Garantir Vaga</a>
+                        </div>
+                    </div>
+
+                    <!-- Curso 5 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80') center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-whatsapp-logo"></i> Vendas</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Vendedor Digital</h3>
+                            <p class="curso-resumo">Domine a arte da conversão online com Técnicas de Vendas, Telemarketing, WhatsApp Business, Facebook Ads, posicionamento e Canva.</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco" style="font-size:1.1rem; color:var(--cor-texto-mutado)">
+                                    Matrículas Abertas
+                                </div>
+                            </div>
+                            <a href="https://wa.me/554195111879" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Saber Mais</a>
+                        </div>
+                    </div>
+
+                    <!-- Curso 6 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url('https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/Wallpaper-1.png') center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-clock"></i> 2 Meses</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Liderança Estratégica</h3>
+                            <p class="curso-resumo">Aprimore habilidades de gestão, mapeamento de talentos, inteligência emocional e comunicação assertiva para liderar equipes de alta performance.</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco">
+                                    <small>Investimento (12h/aula)</small>
+                                    2x R$ 99,90
+                                </div>
+                            </div>
+                            <a href="https://wa.me/554195111879" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Garantir Vaga</a>
+                        </div>
+                    </div>
+
+                    <!-- Curso 7 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url(https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/Copia-de-Banner-1-1.png) center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-clock"></i> 2 Meses</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Digitação Profissional</h3>
+                            <p class="curso-resumo">Aumente sua eficiência e precisão combinando teoria e prática. Domine o teclado, teclas especiais e as corretas posturas ergonômicas.</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco">
+                                    <small>Investimento</small>
+                                    2x R$ 99,90
+                                </div>
+                            </div>
+                            <a href="https://wa.me/554195111879" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Garantir Vaga</a>
+                        </div>
+                    </div>
+
+                    <!-- Curso 8 -->
+                    <div class="card-curso">
+                        <div class="curso-img" style="background: url(https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/WhatsApp-Image-2026-05-29-at-19.33.29-2.jpeg) center/cover;">
+                            <span class="badge-curso"><i class="ph-bold ph-shield-check"></i> Indústria</span>
+                        </div>
+                        <div class="curso-conteudo">
+                            <h3>Normas Regulamentadoras (NRs)</h3>
+                            <p class="curso-resumo">Capacitação obrigatória em segurança do trabalho: NR 1 (Riscos), NR 10 (Eletricidade), NR 20, NR 33 (Confinado) e NR 35 (Altura).</p>
+                            <div class="curso-detalhes">
+                                <div class="curso-preco" style="font-size:1.1rem; color:var(--cor-texto-mutado)">
+                                    Certificações Obrigatórias
+                                </div>
+                            </div>
+                            <a href="https://wa.me/554195111879" target="_blank" class="btn-secundario"><i class="ph-bold ph-whatsapp-logo"></i> Saber Mais</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PERFIL ALVO -->
+        <section class="perfil">
+            <div class="container">
+                <h2>A Transformação é Para Você Que:</h2>
+                <div class="grid-perfil">
+                    <div class="card-perfil">
+                        <i class="ph-duotone ph-briefcase"></i>
+                        <h3>Inicia a Jornada</h3>
+                        <p>Construa um portfólio robusto de hard skills que impressiona recrutadores através de formação voltada 100% para o dia a dia da profissão.</p>
+                    </div>
+                    <div class="card-perfil">
+                        <i class="ph-duotone ph-arrows-merge"></i>
+                        <h3>Busca Transição</h3>
+                        <p>Mude sua trajetória profissional com segurança, absorvendo técnicas das áreas que mais crescem e contratam no cenário atual.</p>
+                    </div>
+                    <div class="card-perfil">
+                        <i class="ph-duotone ph-rocket-launch"></i>
+                        <h3>Quer Crescimento</h3>
+                        <p>Destaque seu perfil em processos seletivos e promoções dominando as ferramentas tecnológicas que as empresas exigem.</p>
+                    </div>
+                    <div class="card-perfil">
+                        <i class="ph-duotone ph-users-three"></i>
+                        <h3>Mira na Liderança</h3>
+                        <p>Ascenda para posições estratégicas desenvolvendo visão holística, inteligência emocional e capacidade superior de tomada de decisão.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- DEPOIMENTOS -->
+        <section class="depoimentos">
+            <div class="container">
+                <h2>Comprovado por Quem Faz</h2>
+                <p style="text-align: center; margin-bottom: 60px; color: var(--cor-texto-mutado); max-width: 650px; margin-left: auto; margin-right: auto; font-size: 1.1rem;">Nossa metodologia baseada em prática de mercado já transformou a vida e o currículo de milhares de profissionais pelo país.</p>
+                
+                <div class="grid-depoimentos">
+                    <div class="card-depoimento">
+                        <div class="aspas">”</div>
+                        <div class="estrelas">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="texto-depoimento">O mercado estava totalmente estagnado para mim. Com a especialização de Atendente de Farmácia da Canal C Quit, adquiri segurança. O material é denso, prático e muito acima da média. Em poucas semanas recebi uma proposta irrecusável.</p>
+                        <div class="perfil-autor">
+                            <div class="avatar-autor">MS</div>
+                            <span class="autor">Mirella Silveira <small>Aluna • Farmácia</small></span>
+                        </div>
+                    </div>
+                    <div class="card-depoimento">
+                        <div class="aspas">”</div>
+                        <div class="estrelas">
+                            <i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i>
+                        </div>
+                        <p class="texto-depoimento">A didática é brilhante. Fiz o combo triplo aproveitando o tempo de deslocamento via mobile. O conteúdo de gestão aliado à tecnologia abriu portas na minha empresa que eu nem imaginava. Uma formação executiva de verdade.</p>
+                        <div class="perfil-autor">
+                            <div class="avatar-autor">CE</div>
+                            <span class="autor">Carlos Eduardo <small>Aluno • Combo Executivo</small></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA FINAL -->
+        <section id="agendamento" class="cta-final">
+            <div class="cta-content container">
+                <h2>Pronto para assumir o controle?</h2>
+                <p>O mercado não espera. Invista em uma formação que alia prestígio, tecnologia e aplicação prática. Fale com um de nossos consultores de carreira agora mesmo.</p>
+                <a href="https://wa.me/554195111879" target="_blank" class="btn-primario" style="background: #fff; color: var(--cor-destaque-rosa); box-shadow: 0 10px 30px rgba(0,0,0,0.2); font-size: 1.1rem;"><i class="ph-bold ph-whatsapp-logo"></i> Conversar com Consultor</a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- BOTAO WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/554195111879" target="_blank" class="btn-whatsapp-float" title="Fale conosco pelo WhatsApp">
+        <i class="ph-fill ph-whatsapp-logo"></i>
+    </a>
+
+    <!-- FOOTER PREMIUM -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-logo">
+                        <img src="https://whitesmoke-dolphin-900449.hostingersite.com/wp-content/uploads/2026/06/centro1-2.png" alt="Logo Escola Canal C Quit" style="max-height: 60px; width: auto;">
+                    </div>
+                    <p style="max-width: 300px; margin-bottom: 20px;">Transformando potencial em performance executiva através de tecnologia e educação direcionada.</p>
+                    <p><i class="ph-bold ph-whatsapp-logo"></i> +55 41 9511-1879</p>
+                    <p><i class="ph-bold ph-map-pin"></i> Paraná, Brasil</p>
+                    <p><i class="ph-bold ph-envelope-simple"></i> contato@escolacanalcquit.com.br</p>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Navegação Institucional</h4>
+                    <div class="footer-links">
+                        <a href="#home">Home</a>
+                        <a href="#vantagens">Nossos Diferenciais</a>
+                        <a href="#cursos">Programas de Formação</a>
+                        <a href="#agendamento">Atendimento</a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h4>Políticas e Segurança</h4>
+                    <div class="footer-links">
+                        <a href="#">Termos e Condições de Uso</a>
+                        <a href="#">Política de Privacidade LGPD</a>
+                        <a href="#">Segurança e Criptografia de Dados</a>
+                        <a href="#">Código de Conduta da Comunidade</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="agencia">
+                <div>&copy; 2026 Escola Canal C Quit. Educação Profissional. Todos os direitos reservados.</div>
+                <div>desenvolvido por <strong>VOXO ESTÚDIO</strong></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Toggle do Menu Mobile
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        const iconMenu = menuToggle.querySelector('i');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            if(navMenu.classList.contains('active')) {
+                iconMenu.classList.replace('ph-list', 'ph-x');
+            } else {
+                iconMenu.classList.replace('ph-x', 'ph-list');
+            }
+        });
+
+        // Fechar menu ao clicar num link
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                iconMenu.classList.replace('ph-x', 'ph-list');
+            });
+        });
+
+        // Efeito Blur no Header ao dar Scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.style.backgroundColor = 'rgba(6, 11, 38, 0.98)';
+                header.style.boxShadow = '0 10px 30px rgba(0,0,0,0.2)';
+            } else {
+                header.style.backgroundColor = 'rgba(6, 11, 38, 0.95)';
+                header.style.boxShadow = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
